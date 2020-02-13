@@ -1,0 +1,84 @@
+# iCEstick constraint file
+# 
+# red LEDs
+set_io  lpc_clk_led             99
+# set_io  rled1           99
+set_io  lpc_frame_led           98
+# set_io  rled2           98
+set_io  lpc_reset_led           97
+# set_io  rled3           97
+set_io  valid_lpc_output_led    96
+# set_io  rled4           96
+
+# green LED
+set_io  overflow_led    95
+# set_io  gled1           95
+
+# IrDA port
+#set_io  rxd             106
+#set_io  txd             105
+#set_io  sd              107
+
+# Pmod connector
+# set_io  pio1_02         78  # pin 1
+# set_io  pio1_03         79  # pin 2
+# set_io  pio1_04         80  # pin 3
+# set_io  pio1_05         81  # pin 4
+# set_io  pio1_06         87  # pin 7
+# set_io  pio1_07         88  # pin 8
+# set_io  pio1_08         90  # pin 9
+# set_io  pio1_09         91  # pin 10
+
+# connector J1
+set_io  lpc_clk         112
+set_io  lpc_ad[0]       113
+set_io  lpc_ad[1]       114
+set_io  lpc_ad[2]       115
+set_io  lpc_ad[3]       116
+set_io  lpc_frame       117
+set_io  lpc_reset       118
+
+#set_io  pio0_02         112 # pin 3
+#set_io  pio0_03         113 # pin 4
+#set_io  pio0_04         114 # pin 5
+#set_io  pio0_05         115 # pin 6
+#set_io  pio0_06         116 # pin 7
+#set_io  pio0_07         117 # pin 8
+#set_io  pio0_08         118 # pin 9
+#set_io  pio0_09         119 # pin 10
+
+# connector J3
+#set_io  pio2_17         62  # pin 3
+#set_io  pio2_16         61  # pin 4
+#set_io  pio2_15         60  # pin 5
+#set_io  pio2_14         56  # pin 6
+#set_io  pio2_13         48  # pin 7
+#set_io  pio2_12         47  # pin 8
+#set_io  pio2_11         45  # pin 9
+#set_io  pio2_10         44  # pin 10
+
+# FTDI UART
+#set_io  uart_dcd        1
+#set_io  uart_dsr        2
+#set_io  uart_dtr        3
+set_io  fscts           4
+#set_io  uart_cts        4
+set_io  fsdo            7
+#set_io  uart_rts        7
+set_io  fsclk           8
+# set_io  uart_tx         8
+set_io  fsdi            9
+# set_io  uart_rx         9
+
+# SPI
+#set_io  spi_sck         70
+#set_io  spi_mosi        68
+#set_io  spi_miso        67
+#set_io  spi_ss          71
+
+# configuration pins
+#set_io  cdone           65
+#set_io  creset          66
+
+# 12 MHz clock
+set_io  clk             21

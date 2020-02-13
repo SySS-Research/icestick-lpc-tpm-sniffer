@@ -1,0 +1,3 @@
+pylibftdi==0.17.0
+sty==1.0.0b12
+pycryptodome==3.9.6
