@@ -1,7 +1,7 @@
 # iCEstick LPC TPM Sniffer
 
 The iCEstick LPC TPM Sniffer is a modified version of [Alexander Couzens'](https://github.com/lynxis)
-[LPC Sniffer](https://github.com/lynxis/lpc_sniffer/) including the TPM-specific modifications by Denis Andzakovic ([LPC Sniffer TPM](https://github.com/denandz/lpc_sniffer_tpm])) for sniffing specific LPC messages of trusted platform modules (TPMs).
+[LPC Sniffer](https://github.com/lynxis/lpc_sniffer/) including the TPM-specific modifications by Denis Andzakovic ([LPC Sniffer TPM](https://github.com/denandz/lpc_sniffer_tpm)) for sniffing specific LPC messages of trusted platform modules (TPMs).
 
 This implementation was used for reproducing the LPC sniffing attack described in the blog article [Extracting BitLocker Keys from a TPM](https://pulsesecurity.co.nz/articles/TPM-sniffing) by Denis Andzakovic targeting an [ASUS TPM-M R2.0](https://www.asus.com/Motherboard-Accessories/TPM-M-R2-0/) with an [Infineon SLB 9665 TT2.0 TPM](https://www.infineon.com/cms/en/product/security-smart-card-solutions/optiga-embedded-security-solutions/optiga-tpm/slb-9665tt2.0/).
 
@@ -22,8 +22,8 @@ In January 2019, this LPC bus sniffing attack against Microsoft BitLocker in TPM
 - [Project IceStorm Tools](https://github.com/cliffordwolf/icestorm)
 
 ## Installation
-The iCEstick Glitcher can be downloaded and built using the SymbiFlow toolchain in the following way:
 
+The iCEstick Glitcher can be downloaded and built using the SymbiFlow toolchain in the following way:
 ```
 git clone git clone https://github.com/SySS-Research/icestick-lpt-tpm-sniffer.git
 cd icestick-lpc-tpm-sniffer
@@ -215,7 +215,7 @@ drwxrwxrwx 1 root root      16384 30. Jan 13:13  Windows
 ## Demo
 
 This demo video exemplarily shows how a sniffing attack against the Low Pin Count (LPC) bus communication of a trusted platform module (TPM) using the iCEstick LPC TPM Sniffer.
-In this demo video, a current Windows 10 system (1909) with Microsoft BitLocker in TPM-only mode and an ASUS TPM-M R2.0 using an Infineon SLB 9665 TT 2.0 chip is attacked.
+In this demo video, a current Windows 10 system (1909) with Microsoft BitLocker in TPM-only mode and an [ASUS TPM-M R2.0](https://www.asus.com/Motherboard-Accessories/TPM-M-R2-0/) using an [Infineon SLB 9665 TT 2.0](https://www.infineon.com/cms/en/product/security-smart-card-solutions/optiga-embedded-security-solutions/optiga-tpm/slb-9665tt2.0/) chip is attacked.
 
 [![SySS PoC Video: LPC Bus Sniffing Attack against Microsoft BitLocker in TPM-only Mode](/images/icestick_lpc_tpm_sniffer_poc_video.jpg)](https://www.youtube.com/watch?v=-Fj3SeZww3M "LPC Bus Sniffing Attack against Microsoft BitLocker in TPM-only Mode")
 
