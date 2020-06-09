@@ -4,15 +4,15 @@
  * Ring buffer
  */
 
-module ringbuffer #(parameter AW = 8, DW = 48)(
-		input wire clk,
-		input wire reset,
-		input wire read_clk_enable,
-		input wire write_clk_enable,
-		input wire [DW-1:0] write_data,
-		output reg [DW-1:0] read_data,
-		output wire empty,
-		output wire overflow
+module ringbuffer #(parameter AW = 8, DW = 32)(
+        input wire clk,
+        input wire reset,
+        input wire read_clk_enable,
+        input wire write_clk_enable,
+        input wire [DW-1:0] write_data,
+        output reg [DW-1:0] read_data,
+        output wire empty,
+        output wire overflow
 );
 
     // registers

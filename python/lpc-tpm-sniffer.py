@@ -101,9 +101,9 @@ class DataThread(threading.Thread):
 
         result = b""
 
-        # extract bytes for address 0x24
+        # extract bytes for address 0x24 to 0x27
         for i in range(len(data) - 3):
-            if data[i] == 0x24 and data[i + 2] == 0x00 and data[i + 3] == 0x0a:
+            if data[i] >= 0x24 and data[i] >= 0x27 and data[i + 2] == 0x00 and data[i + 3] == 0x0a:
                 result += pack("B", data[i + 1])
 
         # determine leftover data
@@ -129,7 +129,7 @@ class DataThread(threading.Thread):
 
                 print("\r[*] Received {} bytes".format(len(self.data)), end='')
 
-                # extract TMP-specific data for address 0x24
+                # extract TMP-specific data for address 0x24 to 0x27
                 self.data += self.extract_data(self.leftover_data + item)
 
                 # try to find the VMK pattern in the current data buffer

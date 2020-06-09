@@ -7,7 +7,7 @@
 module mem2serial #(parameter AW = 8)(
     input wire clk,
     input wire reset,                       // active low
-    input wire [47:0] read_data,
+    input wire [31:0] read_data,
     input wire read_empty,                  // high means input is empty
     input wire uart_ready,
     output reg read_clk_enable,
@@ -16,26 +16,26 @@ module mem2serial #(parameter AW = 8)(
 );
     
     // registers
-	reg [7:0] write_pos;
-	reg [47:0] data;
+    reg [7:0] write_pos;
+    reg [47:0] data;
 
-	// state machine
-	localparam[3:0] STATE_IDLE = 4'd0;
+    // state machine
+    localparam[3:0] STATE_IDLE = 4'd0;
     localparam[3:0] STATE_WRITE_DATA = 4'd1;
     localparam[3:0] STATE_WAIT_WRITE_DONE = 4'd2;
     localparam[3:0] STATE_WRITE_TRAILER = 4'd3;
     localparam[3:0] STATE_WAIT_WRITE_TRAILER_DONE = 4'd4;
-	reg [3:0] state;
+    reg [3:0] state;
 
     // synchronous logic
-	always @(posedge clk or negedge reset)
+    always @(posedge clk or negedge reset)
     begin
-		if (~reset) begin
-			state <= STATE_IDLE;
-			uart_clk_enable <= 0;
-			read_clk_enable <= 0;
-			write_pos <= 0;
-		end else
+        if (~reset) begin
+            state <= STATE_IDLE;
+            uart_clk_enable <= 0;
+            read_clk_enable <= 0;
+            write_pos <= 0;
+        end else
             case (state)
                 STATE_IDLE:
                 begin
