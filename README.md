@@ -23,7 +23,7 @@ In January 2019, this LPC bus sniffing attack against Microsoft BitLocker in TPM
 
 ## Installation
 
-The iCEstick Glitcher can be downloaded and built using the SymbiFlow toolchain in the following way:
+The iCEstick LPC TPM Sniffer can be downloaded and built using the SymbiFlow toolchain in the following way:
 ```
 git clone https://github.com/SySS-Research/icestick-lpt-tpm-sniffer.git
 cd icestick-lpc-tpm-sniffer
