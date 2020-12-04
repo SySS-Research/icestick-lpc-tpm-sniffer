@@ -4,6 +4,7 @@ The iCEstick LPC TPM Sniffer is a modified version of [Alexander Couzens'](https
 [LPC Sniffer](https://github.com/lynxis/lpc_sniffer/) including the TPM-specific modifications by Denis Andzakovic ([LPC Sniffer TPM](https://github.com/denandz/lpc_sniffer_tpm)) for sniffing specific LPC messages of trusted platform modules (TPMs).
 
 This implementation was used for reproducing the LPC sniffing attack described in the blog article [Extracting BitLocker Keys from a TPM](https://pulsesecurity.co.nz/articles/TPM-sniffing) by Denis Andzakovic targeting an [ASUS TPM-M R2.0](https://www.asus.com/Motherboard-Accessories/TPM-M-R2-0/) with an [Infineon SLB 9665 TT2.0 TPM](https://www.infineon.com/cms/en/product/security-smart-card-solutions/optiga-embedded-security-solutions/optiga-tpm/slb-9665tt2.0/).
+The state machine has been rewritten to improve compatibility and respect of LPC protocol.
 
 In January 2019, this LPC bus sniffing attack against Microsoft BitLocker in TPM-only mode was mentioned by Hector Martin ([@marcan42](https://twitter.com/marcan42)) in [this Tweet](https://twitter.com/marcan42/status/1080869868889501696).
 

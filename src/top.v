@@ -37,13 +37,13 @@ module top(
     // LPC
 	wire [3:0] lpc_ad;                      // LPC address
 	wire [3:0] dec_cyctype_dir;             // LPC cycle type/direction
-	wire [31:0] dec_addr;                   // LPC address
+	wire [15:0] dec_addr;                   // LPC address
 	wire [7:0] dec_data;                    // LPC data
 	wire dec_sync_timeout;
 
     // buffer domain
-	wire [47:0] lpc_data;
-	wire [47:0] write_data;
+	wire [31:0] lpc_data;
+	wire [31:0] write_data;
 	wire lpc_data_enable;
 
     // ring buffer
@@ -53,7 +53,7 @@ module top(
 	wire overflow;
 
     // memory to serial
-	wire [47:0] read_data;
+	wire [31:0] read_data;
 
     // UART transmitter
 	wire uart_ready;
@@ -66,13 +66,13 @@ module top(
 	wire no_lpc_reset;
 
     // combinatorial logic
-    assign lpc_data[47:16] = dec_addr;
+    assign lpc_data[31:16] = dec_addr;
 	assign lpc_data[15:8] = dec_data;
 	assign lpc_data[7:5] = 0;
 	assign lpc_data[4] = dec_sync_timeout;
 	assign lpc_data[3:0] = dec_cyctype_dir;
 	assign fsclk = sys_clk;
-    assign trigger_port = dec_cyctype_dir == 4'b0100;
+	assign trigger_port = dec_cyctype_dir == 4'b0100;
 	assign lpc_clk_led = 0;
 	assign lpc_frame_led = 0;
 	assign lpc_reset_led = 1;
@@ -107,7 +107,7 @@ module top(
     );
 
     // buffer domain
-	bufferdomain #(.AW(48))
+	bufferdomain #(.AW(32))
 		bufferdomain(
 			.clk(sys_clk),
 			.reset(reset),
@@ -118,7 +118,7 @@ module top(
         );
 
     // ring buffer
-	ringbuffer #(.AW(10), .DW(48))
+	ringbuffer #(.AW(10), .DW(32))
 		ringbuffer(
 			.clk(sys_clk),
 			.reset(reset),
